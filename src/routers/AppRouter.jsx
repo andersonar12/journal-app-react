@@ -1,5 +1,4 @@
 import Swal from "sweetalert2";
-import { useContext } from "react";
 import { Route, Routes, Outlet, Navigate, useLocation } from "react-router-dom";
 import { LayoutAuth } from "./LayoutAuth.jsx";
 import { JournalScreen } from "../views/journal/JournalScreen.jsx";
@@ -8,7 +7,6 @@ import { LoginScreen } from "../views/auth/LoginScreen.jsx";
 import { PageNotFound } from "../views/page-not-found/PageNotFound.jsx";
 
 export function AppRouter() {
-  /*   const { user } = useContext(AuthContext); */
   const { pathname } = useLocation();
   const RedirectToLogin = () => (pathname === "/" ? <Navigate to="/auth/login" /> : <Outlet />);
   return (
